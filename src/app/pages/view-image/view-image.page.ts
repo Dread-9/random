@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar,IonButtons,IonMenuButton} from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonMenuButton,IonImg } from '@ionic/angular/standalone';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -9,9 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './view-image.page.html',
   styleUrls: ['./view-image.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule,
-    IonButtons,IonMenuButton
-  ]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButtons, IonMenuButton,IonImg]
 })
 export class ViewImagePage implements OnInit {
   imageUrl: string | null = null;
@@ -20,5 +18,4 @@ export class ViewImagePage implements OnInit {
 
   ngOnInit() {
   }
-
 }

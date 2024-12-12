@@ -9,8 +9,8 @@
 
 <ion-content fullscreen="true" class="content">
   <ion-card>
-    <ion-img src="https://static8.depositphotos.com/1052928/952/i/450/depositphotos_9520406-stock-illustration-duck-white.jpg" alt="Random Image"></ion-img>
-    <!-- <ion-img *ngIf="randomImageUrl" [src]="randomImageUrl" alt="Random Image"></ion-img> -->
+    <!-- <ion-img src="https://static8.depositphotos.com/1052928/952/i/450/depositphotos_9520406-stock-illustration-duck-white.jpg" alt="Random Image"></ion-img> -->
+    <ion-img *ngIf="randomImageUrl" [src]="randomImageUrl" alt="Random Image"></ion-img>
   </ion-card>
 
   <ion-fab horizontal="end" vertical="bottom">
@@ -23,4 +23,25 @@
       </svg>
     </ion-fab-button>
   </ion-fab>
+
+  <!-- <ion-button (click)="getRandomImage()">Obtener Imagen Aleatoria (JPG)</ion-button>
+  <ion-button (click)="getRandomGif()">Obtener Gif Aleatorio</ion-button>
+  <ion-button (click)="getRandomImageFile()">Obtener Archivo de Imagen Aleatorio</ion-button>
+
+  <ion-button (click)="getList()">Obtener Lista de Imágenes</ion-button>
+  <ion-button (click)="getImage(1)">Obtener Imagen 1</ion-button>
+  <ion-button (click)="getHttpImage(404)">Obtener Imagen de Estado HTTP 404</ion-button>
+
+  <div *ngIf="randomImage">
+    <p>{{ randomImage.message }}</p>
+    <img [src]="randomImage.url" alt="Imagen Aleatoria" />
+  </div>
+
+  <div *ngIf="randomGif">
+    <img [src]="randomGif.url" alt="Gif Aleatorio" />
+  </div>
+
+  <div *ngIf="randomImageFile">
+    <img [src]="randomImageFile" alt="Archivo de Imagen Aleatorio" />
+  </div> -->
 </ion-content>

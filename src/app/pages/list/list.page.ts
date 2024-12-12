@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonMenuButton, IonList, IonItem, IonThumbnail, IonImg, IonLabel, IonButton, IonSpinner,IonItemDivider } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonMenuButton, IonList, IonItem, IonThumbnail, IonImg, IonLabel, IonButton, IonSpinner,IonItemDivider,IonRouterLink,IonIcon } from '@ionic/angular/standalone';
 import { ImageList } from 'src/app/shared/models/ImageList.model';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.page.html',
   styleUrls: ['./list.page.scss'],
   standalone: true,
-  imports: [IonSpinner, IonButton, 
+  imports: [
+    IonSpinner, 
+    IonButton, 
     CommonModule,
     FormsModule,
     IonContent,
@@ -23,7 +26,9 @@ import { ImageList } from 'src/app/shared/models/ImageList.model';
     IonThumbnail,
     IonImg,
     IonLabel,
-    IonItemDivider
+    IonItemDivider,
+    IonIcon,
+    RouterModule
   ],
 })
 export class ListPage implements OnInit {
