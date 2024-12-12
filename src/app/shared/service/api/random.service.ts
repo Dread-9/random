@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import * as globalConfig from '../../../global';
+import { catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +24,12 @@ export class RandomService {
     const url = `${this.API_BASE_URL}/random` + (type ? `?type=${type}` : '');
     return this.http.get<{ url: string; message: string }>(url, {
       headers: this.HTTP_HEADERS
-    });
+    }).pipe(
+      catchError(error => {
+        console.error('Error cargando pato aleatorio:', error);
+        return throwError('No se pudo cargar el pato aleatorio. Inténtalo nuevamente más tarde.');
+      })
+    );
   }
 
   /**

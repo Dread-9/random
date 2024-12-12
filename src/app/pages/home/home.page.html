@@ -1,16 +1,11 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title class="ion-text-center">Inicio</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Inicio</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div *ngIf="randomDuckUrl; else loading">
-    <img [src]="randomDuckUrl" alt="Random Duck" />
-    <p>{{ randomDuckMessage }}</p>
-  </div>
-  <ng-template #loading>
-    <p>Cargando pato...</p>
-  </ng-template>
-  <ion-button expand="block" (click)="loadRandomDuck()">¡Otro Pato!</ion-button>
 </ion-content>

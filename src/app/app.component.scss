@@ -1,0 +1,13 @@
+.menu-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.menu-logo ion-img {
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: contain;
+    border-radius: 50%;
+}
