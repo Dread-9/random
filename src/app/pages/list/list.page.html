@@ -3,14 +3,30 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Lista de Imagen</ion-title>
+    <ion-title>Lista de Imágenes</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">list</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-list *ngIf="!isLoading && imageList">
+    <ion-item-divider color="light">
+      <ion-label>Imágenes</ion-label>
+    </ion-item-divider>
+    <ion-item *ngFor="let image of imageList.images">
+      <ion-thumbnail slot="start">
+        <img [src]="image" alt="Imagen estática" />
+      </ion-thumbnail>
+      <ion-label>Imagen</ion-label>
+    </ion-item>
+
+    <ion-item-divider color="light">
+      <ion-label>GIFs</ion-label>
+    </ion-item-divider>
+    <ion-item *ngFor="let gif of imageList.gifs">
+      <ion-thumbnail slot="start">
+        <img [src]="gif" alt="Imagen animada (GIF)" />
+      </ion-thumbnail>
+      <ion-label>GIF</ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>

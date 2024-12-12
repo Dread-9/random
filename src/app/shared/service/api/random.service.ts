@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import * as globalConfig from '../../../global';
 import { catchError } from 'rxjs/operators';
@@ -10,8 +10,6 @@ import { throwError } from 'rxjs';
 })
 export class RandomService {
   private readonly API_BASE_URL = globalConfig.BASE_URL;
-  private readonly MAX_FILE_SIZE = globalConfig.MAX_FILE_SIZE;
-  private readonly ALLOWED_FILE_TYPES = globalConfig.ALLOWED_FILE_TYPES;
   private readonly HTTP_HEADERS = globalConfig.GLOBAL_CONFIG.HTTP_HEADERS;
 
   constructor(private http: HttpClient) {}

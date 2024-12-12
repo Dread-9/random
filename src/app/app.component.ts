@@ -15,12 +15,5 @@ import { RouterModule } from '@angular/router';
   ],
 })
 export class AppComponent {
-  items = [
-    { title: 'Home', link: '/home', icon: 'home-outline' },
-    { title: 'Image List', link: '/image-list', icon: 'image-outline' },
-    { title: 'Upload Image', link: '/upload-image', icon: 'cloud-upload-outline' },
-    { title: 'List', link: '/list', icon: 'list-outline' },
-    { title: 'View Image', link: '/view-image', icon: 'eye-outline' },
-  ];
   constructor(){}
 }

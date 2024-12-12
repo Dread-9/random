@@ -1,3 +1,4 @@
 export interface RandomImage {
-    url: string;
-}
+        message: string;
+        url:     string;
+    }
