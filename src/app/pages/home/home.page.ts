@@ -32,10 +32,12 @@ export class HomePage implements OnInit {
   randomDuckUrl: string | null = null;
   randomDuckMessage: string | null = null;
 
-  constructor(private router: Router, private randomService: RandomService) { }
+
+  constructor(  
+    private router: Router,
+    private randomService: RandomService) { }
 
   ngOnInit() {
-    this.loadRandomDuck();
   }
 
   loadRandomDuck(): void {
