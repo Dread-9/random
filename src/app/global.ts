@@ -1,4 +1,6 @@
-export const BASE_URL = 'https://random-d.uk/api/v2';
+export const BASE_URL = 'https://random-d.uk/api';
+export const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB en bytes
+export const ALLOWED_FILE_TYPES = ['image/jpeg', 'image/png', 'image/gif'];
 
 export const API_ENDPOINTS = {
     RANDOM: `${BASE_URL}/random`,
@@ -11,7 +13,13 @@ export const API_ENDPOINTS = {
     UPLOAD: `${BASE_URL}/add`
 };
 
-
-API_ENDPOINTS.IMAGE_BY_NUM('51');
-API_ENDPOINTS.GIF_BY_NUM('12');
-API_ENDPOINTS.HTTP_IMAGE('404');
+export const GLOBAL_CONFIG = {
+  API_BASE_URL: BASE_URL,
+  MAX_FILE_SIZE: MAX_FILE_SIZE,
+  ALLOWED_FILE_TYPES: ALLOWED_FILE_TYPES,
+  HTTP_HEADERS: {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Expose-Headers': 'access-control-allow-origin'
+  },
+  API_ENDPOINTS: API_ENDPOINTS
+};

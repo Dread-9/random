@@ -1,0 +1,11 @@
+{
+    "/api": {
+    "target": "https://random-d.uk/api/v2",
+    "secure": false,
+    "changeOrigin": true,
+    "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Expose-Headers": "access-control-allow-origin"
+    }
+    }
+}

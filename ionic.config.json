@@ -3,5 +3,11 @@
   "integrations": {
     "capacitor": {}
   },
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "https://random-d.uk/api/"
+    }
+  ],
   "type": "angular-standalone"
 }
