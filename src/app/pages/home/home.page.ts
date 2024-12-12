@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonFabButton, IonFab, IonLabel, IonItem, IonList, IonButton, IonMenuButton, IonButtons, IonImg,IonIcon,IonCard } from '@ionic/angular/standalone';
 import { Router } from '@angular/router';
-import { RandomApiService } from 'src/app/shared/service/random-api.service';
 import { RandomImage } from 'src/app/shared/models/RandomImage.model';
+import { RandomApiService } from 'src/app/shared/service/api/random.service';
 
 @Component({
   selector: 'app-home',

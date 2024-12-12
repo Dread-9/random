@@ -3,14 +3,13 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Inicio</ion-title>
+    <ion-title>Random Duck</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content fullscreen="true" class="content">
   <ion-card>
-    <!-- <ion-img src="https://static8.depositphotos.com/1052928/952/i/450/depositphotos_9520406-stock-illustration-duck-white.jpg" alt="Random Image"></ion-img> -->
-    <ion-img *ngIf="randomImageUrl" [src]="randomImageUrl" alt="Random Image"></ion-img>
+    <ion-img *ngIf="randomImageUrl" [src]="randomImageUrl" alt="Random Duck"></ion-img>
   </ion-card>
 
   <ion-fab horizontal="end" vertical="bottom">
@@ -23,6 +22,7 @@
       </svg>
     </ion-fab-button>
   </ion-fab>
+</ion-content>
 
   <!-- <ion-button (click)="getRandomImage()">Obtener Imagen Aleatoria (JPG)</ion-button>
   <ion-button (click)="getRandomGif()">Obtener Gif Aleatorio</ion-button>
@@ -44,4 +44,3 @@
   <div *ngIf="randomImageFile">
     <img [src]="randomImageFile" alt="Archivo de Imagen Aleatorio" />
   </div> -->
-</ion-content>
