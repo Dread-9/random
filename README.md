@@ -71,7 +71,7 @@ En el archivo `proxy.conf.json`, agrega la siguiente configuración:
 Asegúrate de agregar la opción `--proxy-conf proxy.conf.json` al comando de inicio en el archivo `angular.json` o al ejecutar el servidor localmente:
 
 ```bash
-ionic serve --proxy-config proxy.conf.json
+ionic serve --proxy-conf proxy.conf.json
 ```
 
 Iniciar el servidor
