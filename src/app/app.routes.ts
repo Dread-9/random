@@ -10,7 +10,7 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/list/list.page').then( m => m.ListPage)
   },
   {
-    path: 'view-image/id',
+    path: 'view-image/:id',
     loadComponent: () => import('./pages/view-image/view-image.page').then( m => m.ViewImagePage)
   },
   {

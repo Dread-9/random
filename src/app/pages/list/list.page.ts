@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonMenuButton, IonList, IonItem, IonThumbnail, IonImg, IonLabel, IonButton, IonSpinner, IonItemDivider, IonRouterLink, IonIcon, IonAlert, IonBadge} from '@ionic/angular/standalone';
 import { ImageList } from 'src/app/shared/models/ImageList.model';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { RandomApiService } from 'src/app/shared/service/api/random.service';
 import { tap } from 'rxjs';
 
@@ -17,7 +17,9 @@ import { tap } from 'rxjs';
 export class ListPage implements OnInit {
   imageList!: ImageList;
 
-  constructor(private randomApiService: RandomApiService) {}
+  constructor(private randomApiService: RandomApiService,
+    private router: Router
+  ) {}
 
   
   ngOnInit() {
@@ -26,5 +28,9 @@ export class ListPage implements OnInit {
         tap(data => this.imageList = data)
       )
       .subscribe();
+  }
+
+  viewImage(id: string) {
+    this.router.navigate(['/view-image', id]);
   }
 }
