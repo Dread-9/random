@@ -1,100 +1,87 @@
 
 # Desafío técnico 
 
+Esta API proporciona acceso a imágenes aleatorias de patos en formatos JPEG y GIF. Permite obtener imágenes de manera sencilla a través de diferentes endpoints. Los principales incluyen:
+
+- **GET /random**: Devuelve un objeto JSON con un enlace a una imagen aleatoria y un mensaje opcional de atribución.
+- **GET /list**: Devuelve un objeto JSON con todos los nombres de archivo disponibles.
+- **GET /:num.jpg**: Devuelve un archivo de imagen directamente.
+- **GET /http/:code**: Devuelve una imagen de pato representando un código de estado HTTP.
+
+
+
 
 ## Documentation
 
-[Documentation](https://random-d.uk/api)
+[Api](https://random-d.uk/api)
 
 
 ## API Reference
 
-#### Get all items
+#### Obtener todos los elementos
 
 ```http
-  GET /api/items
+  GET /api/v2/random
 ```
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `api_key` | `string` | **Required**. Your API key |
-
-#### Get item
 
 ```http
-  GET /api/items/${id}
+  GET /api/v2/list
 ```
 
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | **Required**. Id of item to fetch |
+```http
+  GET /api/v2/:num.jpg
+```
 
-#### add(num1, num2)
-
-Takes two numbers and returns the sum.
+```http
+  GET /api/v2/:num.gif
+```
 
 
 ## Run Locally
 
-Clone the project
+Clona el proyecto
 
 ```bash
-  git clone https://link-to-project
+  https://github.com/Dread-9/random.git
 ```
 
-Go to the project directory
+Ve al directorio del proyecto
 
 ```bash
-  cd my-project
+  cd random
 ```
 
-Install dependencies
+Instalar dependencias
 
 ```bash
   npm install
 ```
 
-Start the server
+Iniciar el servidor
 
 ```bash
-  npm run start
+  ionic serve
 ```
 
 
-## Installation
-
-Install my-project with npm
-
-```bash
-  npm install my-project
-  cd my-project
-```
-    
 ## Deployment
 
-To deploy this project run
+Para desplegar este proyecto, ejecuta
 
 ```bash
-  npm run deploy
+  ionic build
 ```
-
-
-## Screenshots
-
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 
 
 ## Demo
 
-Insert gif or link to demo
+https://random-duck.netlify.app/home
 
-    
 ## Feedback
 
-If you have any feedback, please reach out to us at fake@fake.com
+Si tienes algún comentario, no dudes en contactarnos por medio de garymonasterioaguilera@gmail.com.
 
 
 ## Authors
 
 - [@Gary](https://github.com/Dread-9)
-
