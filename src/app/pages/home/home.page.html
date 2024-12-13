@@ -1,27 +1,32 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
+    Random Duck
   </ion-toolbar>
 </ion-header>
 
-<ion-content fullscreen="true" class="content">
-  <ion-card>
+<ion-content fullscreen="true" class="bg-gradient-to-b from-blue-200 to-blue-100 flex flex-col items-center justify-center">
+  <ion-card class="w-full max-w-md p-6 bg-white shadow-2xl rounded-3xl border border-gray-200">
     <ion-text color="primary">
-      <h1>Bienvenido a Random Duck!</h1>
+      <h1 class="text-2xl font-extrabold text-center mb-4">¡Bienvenido a Random Duck!</h1>
     </ion-text>
-    <ion-img *ngIf="randomImageUrl" [src]="randomImageUrl" alt="Random Duck"></ion-img>
+
+    <div class="flex justify-center items-center">
+      <ion-img
+        *ngIf="randomImageUrl"
+        [src]="randomImageUrl"
+        alt="Random Duck"
+        class="rounded-xl shadow-lg mb-4 transform transition-transform duration-500 hover:scale-105"
+      ></ion-img>
+    </div>
+    <p class="text-center text-gray-700 text-sm">Clic en el botón para obtener otra imagen de pato divertida.</p>
   </ion-card>
 
-  <ion-fab horizontal="end" vertical="bottom">
+  <ion-fab horizontal="center" vertical="bottom" class="m-6">
     <ion-fab-button (click)="refreshImage()">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-refresh-dot">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-        <path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4" />
-        <path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4" />
-        <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
-      </svg>
+      <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-refresh"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4" /><path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4" /></svg>
     </ion-fab-button>
   </ion-fab>
 </ion-content>

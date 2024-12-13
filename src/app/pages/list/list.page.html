@@ -1,40 +1,49 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Lista de Imágenes y GIFs</ion-title>
+    <ion-title class="text-xl">Lista de Imágenes y GIFs</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-list>
-    <ion-item-divider color="primary">
-      <ion-label>Imágenes</ion-label>
-      <ion-badge slot="end" color="primary">{{ imageList.image_count }}</ion-badge>
+<ion-content [fullscreen]="true" class="bg-gray-100 py-4">
+  <ion-list class="max-w-2xl mx-auto">
+    <ion-item-divider color="primary" class="bg-primary text-white py-2 px-4 rounded-lg mb-2">
+      <ion-label class="text-lg font-semibold">Imágenes</ion-label>
+      <ion-badge slot="end" color="primary" class="text-base font-bold">Total de Imagenes: {{ imageList.image_count }}</ion-badge>
     </ion-item-divider>
-    <ion-item *ngFor="let image of imageList?.images | slice:0:10" (click)="viewImage(image)">
-      <ion-thumbnail>
-        <ion-img [src]="'https://random-d.uk/api/' + image" alt="Random Image"></ion-img>
+    <ion-item *ngFor="let image of imageList?.images | slice:0:10" (click)="viewImage(image)" class="bg-white shadow-md rounded-lg mb-3 transform transition-transform hover:scale-105">
+      <ion-thumbnail class="mr-4">
+        <ion-img [src]="'https://random-d.uk/api/' + image" alt="Random Image" class="rounded-lg"></ion-img>
       </ion-thumbnail>
-      <ion-label></ion-label>
-      <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></svg>
+      <ion-label class="text-gray-700 font-medium">Ver Imagen</ion-label>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-500 ml-auto">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M5 12l14 0" />
+        <path d="M13 18l6 -6" />
+        <path d="M13 6l6 6" />
+      </svg>
     </ion-item>
 
-    <ion-item-divider color="secondary">
-      <ion-label>GIFs</ion-label>
-      <ion-badge slot="end" color="secondary">{{ imageList.gif_count }}</ion-badge>
+    <ion-item-divider color="secondary" class="bg-secondary text-white py-2 px-4 rounded-lg mb-2">
+      <ion-label class="text-lg font-semibold">GIFs</ion-label>
+      <ion-badge slot="end" color="secondary" class="text-base font-bold">Total de GIFs: {{ imageList.gif_count }}</ion-badge>
     </ion-item-divider>
-    <ion-item *ngFor="let gif of imageList?.gifs" (click)="viewImage(gif)">
-      <ion-thumbnail>
-        <ion-img [src]="'https://random-d.uk/api/'+ gif" alt="Random GIF"></ion-img>
+    <ion-item *ngFor="let gif of imageList?.gifs" (click)="viewImage(gif)" class="bg-white shadow-md rounded-lg mb-3 transform transition-transform hover:scale-105">
+      <ion-thumbnail class="mr-4">
+        <ion-img [src]="'https://random-d.uk/api/'+ gif" alt="Random GIF" class="rounded-lg"></ion-img>
       </ion-thumbnail>
-      <ion-label></ion-label>
-      <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></svg>
+      <ion-label class="text-gray-700 font-medium">Ver GIF</ion-label>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-500 ml-auto">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M5 12l14 0" />
+        <path d="M13 18l6 -6" />
+        <path d="M13 6l6 6" />
+      </svg>
     </ion-item>
-
     <!-- <ion-item-divider color="tertiary">
-      <ion-label>Http</ion-label>
+    <ion-label>Http</ion-label>
     </ion-item-divider>
     <ion-item *ngFor="let http of imageList?.http " (click)="viewImage(http)">
       <ion-thumbnail>
