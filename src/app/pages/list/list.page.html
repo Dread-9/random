@@ -3,36 +3,45 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Lista de Imágenes</ion-title>
+    <ion-title>Lista de Imágenes y GIFs</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-list *ngIf="!isLoading && imageList">
-    <ion-item-divider color="light">
+  <ion-list>
+    <ion-item-divider color="primary">
       <ion-label>Imágenes</ion-label>
+      <ion-badge slot="end" color="primary">{{ imageList.image_count }}</ion-badge>
     </ion-item-divider>
-    <ion-item *ngFor="let image of imageList.images">
-      <ion-thumbnail slot="start">
-        <img [src]="image" alt="Imagen estática" />
+    <ion-item *ngFor="let image of imageList?.images | slice:0:10">
+      <ion-thumbnail>
+        <ion-img [src]="'https://random-d.uk/api/' + image" alt="Random Image"></ion-img>
       </ion-thumbnail>
-      <ion-label>Imagen</ion-label>
-      <ion-button slot="end">
-        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></svg>
-      </ion-button>
+      <ion-label></ion-label>
+      <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></svg>
     </ion-item>
 
-    <ion-item-divider color="light">
+    <ion-item-divider color="secondary">
       <ion-label>GIFs</ion-label>
+      <ion-badge slot="end" color="secondary">{{ imageList.gif_count }}</ion-badge>
     </ion-item-divider>
-    <ion-item *ngFor="let gif of imageList.gifs">
-      <ion-thumbnail slot="start">
-        <img [src]="gif" alt="Imagen animada (GIF)" />
+    <ion-item *ngFor="let gif of imageList?.gifs">
+      <ion-thumbnail>
+        <ion-img [src]="'https://random-d.uk/api/'+ gif" alt="Random GIF"></ion-img>
       </ion-thumbnail>
-      <ion-label>GIF</ion-label>
-      <ion-button slot="end">
-        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></svg>
-      </ion-button>
+      <ion-label></ion-label>
+      <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></svg>
+    </ion-item>
+
+    <ion-item-divider color="tertiary">
+      <ion-label>Http</ion-label>
+    </ion-item-divider>
+    <ion-item *ngFor="let http of imageList?.http ">
+      <ion-thumbnail>
+        <ion-img [src]="'https://random-d.uk/api/http/' + http" alt="Random Image"></ion-img>
+      </ion-thumbnail>
+      <ion-label></ion-label>
+      <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></svg>
     </ion-item>
   </ion-list>
 </ion-content>
