@@ -1,17 +1,11 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+<ion-content [fullscreen]="true" class="bg-gray-100 flex items-center justify-center py-4">
+  <div class="flex justify-center items-center h-full">
+    <ion-buttons slot="start" class="absolute top-2 left-2">
+      <ion-back-button defaultHref="/" text="volver" class="text-blue-500 font-semibold"></ion-back-button>
     </ion-buttons>
-    <ion-title>Vista de Imagen</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <div class="content">
-    <ion-card>
-      <div class="image-container">
-        <ion-img [src]="imageUrl" alt="Vista de Imagen"></ion-img>
+    <ion-card class="w-full max-w-md bg-white shadow-lg rounded-lg overflow-hidden relative">
+      <div class="relative">
+        <ion-img [src]="imageUrl" alt="Vista de Imagen" class="w-full h-auto"></ion-img>
         <ion-badge color="primary" class="image-badge">{{ imageNumber }}</ion-badge>
       </div>
     </ion-card>
