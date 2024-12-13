@@ -95,5 +95,3 @@ Si tienes algún comentario, no dudes en contactarnos por medio de garymonasteri
 ## Authors
 
 - [@Gary](https://github.com/Dread-9)
-
-

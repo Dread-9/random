@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Vista de Imagen</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="content">
+    <ion-card>
+      <div class="image-container">
+        <ion-img [src]="imageUrl" alt="Vista de Imagen"></ion-img>
+        <ion-badge color="primary" class="image-badge">{{ imageNumber }}</ion-badge>
+      </div>
+    </ion-card>
+  </div>
+</ion-content>
