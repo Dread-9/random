@@ -11,7 +11,7 @@
   <ion-list class="max-w-2xl mx-auto">
     <ion-item-divider color="primary" class="bg-primary text-white py-2 px-4 rounded-lg mb-2">
       <ion-label class="text-lg font-semibold">Imágenes</ion-label>
-      <ion-badge slot="end" color="primary" class="text-base font-bold">Total de Imagenes: {{ imageList.image_count }}</ion-badge>
+      <ion-badge slot="end" color="primary" class="text-base font-bold">Total de Imagenes: {{ imageList.image_count || 0 }}</ion-badge>
     </ion-item-divider>
     <ion-item *ngFor="let image of imageList?.images | slice:0:10" (click)="viewImage(image)" class="bg-white shadow-md rounded-lg mb-3 transform transition-transform hover:scale-105">
       <ion-thumbnail class="mr-4">
@@ -28,7 +28,7 @@
 
     <ion-item-divider color="secondary" class="bg-secondary text-white py-2 px-4 rounded-lg mb-2">
       <ion-label class="text-lg font-semibold">GIFs</ion-label>
-      <ion-badge slot="end" color="secondary" class="text-base font-bold">Total de GIFs: {{ imageList.gif_count }}</ion-badge>
+      <ion-badge slot="end" color="secondary" class="text-base font-bold">Total de GIFs: {{ imageList.gif_count || 0 }}</ion-badge>
     </ion-item-divider>
     <ion-item *ngFor="let gif of imageList?.gifs" (click)="viewImage(gif)" class="bg-white shadow-md rounded-lg mb-3 transform transition-transform hover:scale-105">
       <ion-thumbnail class="mr-4">

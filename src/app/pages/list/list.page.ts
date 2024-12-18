@@ -15,7 +15,13 @@ import { tap } from 'rxjs';
   imports: [IonAlert, IonSpinner, IonButton, CommonModule, FormsModule, IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonMenuButton, IonList, IonItem, IonThumbnail, IonImg, IonLabel, IonItemDivider, IonIcon,IonBadge, RouterModule]
 })
 export class ListPage implements OnInit {
-  imageList!: ImageList;
+  imageList: ImageList = {
+    image_count: 0,
+    gif_count: 0,
+    images: [],
+    gifs: [],
+    http: []
+  };
 
   constructor(private randomApiService: RandomApiService,
     private router: Router
