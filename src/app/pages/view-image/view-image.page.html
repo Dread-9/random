@@ -1,13 +1,26 @@
-<ion-content [fullscreen]="true" class="bg-gray-100 flex items-center justify-center py-4">
-  <div class="flex justify-center items-center h-full">
-    <ion-buttons slot="start" class="absolute top-2 left-2">
-      <ion-back-button defaultHref="/" text="volver" class="text-blue-500 font-semibold"></ion-back-button>
-    </ion-buttons>
-    <ion-card class="w-full max-w-md bg-white shadow-lg rounded-lg overflow-hidden relative">
-      <div class="relative">
-        <ion-img [src]="imageUrl" alt="Vista de Imagen" class="w-full h-auto"></ion-img>
-        <ion-badge color="primary" class="image-badge">{{ imageNumber }}</ion-badge>
+<ion-content [fullscreen]="true" mode="md">
+  <div class="bg-gray-50 flex items-center justify-center min-h-screen">
+    <div class="pt-16 pb-6 px-3">
+      <div class="relative mx-auto md:max-w-2xl bg-white shadow-lg rounded-xl">
+        <ng-container>
+          <div class="absolute w-full flex justify-between px-2 top-2">
+            <ion-buttons slot="start">
+              <ion-back-button defaultHref="/" mode="md" aria-label="Volver"></ion-back-button>
+            </ion-buttons>
+            <ion-text color="primary" class="text-lg font-bold" aria-label="Número de imagen">{{ imageNumber }}</ion-text>
+          </div>
+          <div class="flex justify-center items-center pt-16 pb-4 px-4">
+            <div class="max-w-md items-center rounded-lg overflow-hidden">
+              <ion-img 
+                [src]="imageUrl" 
+                alt="Vista de Imagen" 
+                class="w-full h-full object-cover"
+                (ionError)="imageUrl = 'assets/placeholder.jpg'">
+              </ion-img>
+            </div>
+          </div>
+        </ng-container>
       </div>
-    </ion-card>
+    </div>
   </div>
 </ion-content>
